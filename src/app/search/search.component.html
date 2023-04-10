@@ -1,0 +1,24 @@
+<!--<input class="form-control" id="myInput" type="text" placeholder="Search..">  -->
+<div class="flex items-center justify-center">
+    <form class="w-11/12 mt-5 mb-5">
+      <label for="default-search">Search</label>    
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">            
+        </div>
+        <input type="search" id="default-search" (input)="search($event)"          
+          placeholder="Search..." required>
+        <button type="submit">Search</button>
+    </form>
+  </div>
+  
+  <div style="width:100%; display: flex !important; flex-wrap: wrap; align-items: center;">
+    <div class="card-deck" *ngFor="let character of characters$ | async" style="margin: 10px;">
+        <div class="card" >
+            <div class="card-body">
+            <img [src]="character.image" alt="{{character.name}}" style="max-width: 250px;" >
+            <h5>
+                {{character.name }}
+            </h5>
+            </div>
+        </div>  
+    </div>    
+  </div>
